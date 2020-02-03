@@ -1,0 +1,16 @@
+Your schedule is as shown in the weekly calender
+
+You sleep till 6AM each weekday when you get up
+You sleep till 9AM on the weekend when you get up
+First thing you do when you get up is to eat breakfast
+On mondays, wednesdays and fridays you go to the gym for an hour after breakfast
+On sundays you go to church after breakfast for an hour
+After breakfast and gym (if relevant) you go to class on weekdays till 1PM when you break for lunch
+On saturdays and sundays you go to the river after breakfast and church till lunch at 2PM
+After lunch on a weekday you go back to class till 5PM when you go home and watch some television
+After Lunch on a weekend day you go back to the river till dinner at 7PM
+Every day you stop what you are doing and eat Dinner at 7PM
+Every day after you eat dinner you watch some television till 10PM when you go to bed. 
+
+Unless you get sick, in which case you will always go to bed and only wake up for meals untill you are no longer sick
+
