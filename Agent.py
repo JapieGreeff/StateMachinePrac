@@ -18,7 +18,7 @@ class Agent:
         self.state = initialstate
         pass
 
-    def sense_world(self, dt):
+    def sense_world(self, dt, sick):
         # first decide what state you should be in when the details of the environment are known, then set self.state to that
         # if xyz:
         #   self.state = Action.xyz
@@ -27,7 +27,7 @@ class Agent:
     def perform_action(self):
         if self.state == Action.Breakfast:
             return "I am eating breakfast"
-        # add in the logic for all the other states
+        # add in the checks for all the other states
         # return "I am eating lunch"
         # return "I am eating dinner"
         # return "I am sleeping"

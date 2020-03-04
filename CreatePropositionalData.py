@@ -251,8 +251,8 @@ for index, row in dfsick.iterrows():
 
 
 # we now have Features in X and labels in y
-#for row in zip(X,y):
-#    print(row)
+for row in zip(X,y):
+    print(row)
 
 print('learning and plot of decision tree')
 # from the tutorial here: https://scikit-learn.org/stable/modules/tree.html
