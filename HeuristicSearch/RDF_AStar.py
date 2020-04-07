@@ -7,50 +7,9 @@ from rdflib.namespace import XSD
 from rdflib.namespace import DC, FOAF
 from collections import defaultdict
 from haversine import haversine, Unit
-from PriorityQueue import PriorityQueue
-print('testing Best first (Greedy) search with a priority queue')
-
-# for this example, we will use an imaginary map. We will use the A* algorithm to give us the shortest path from one part of the map to the other
-# Latitude and Longitude for the cities and towns in our minimal map
-
-# a node is a town name, lat, long
-def add_town(graph, name, lat, long):
-    node = Literal(name) # can also be a BNode
-    graph.add( (node, RDF.type, Literal('town')) )
-    graph.add( (node, Literal('latitude'), Literal(lat)) )
-    graph.add( (node, Literal('longitude'), Literal(long)) )
-    return node
-
-# a road is a distance and two nodes
-def add_road(graph, length, nodeA, nodeB):
-    road = BNode()
-    graph.add( (road, RDF.type, Literal('road')) )
-    graph.add( (road, RDF.value, Literal(length)) )
-    graph.add( (road, Literal('endpoint'), nodeA) )
-    graph.add( (road, Literal('endpoint'), nodeB) )
-
-def haversine_distance(graph, nodeA, nodeB):
-    # gets the distance as the crow flies between two nodes
-    nodeALat = term._castLexicalToPython(graph.value(subject=nodeA, predicate=Literal('latitude')), XSD.float)
-    nodeALon = term._castLexicalToPython(graph.value(subject=nodeA, predicate=Literal('longitude')), XSD.float)
-    nodeBLat = term._castLexicalToPython(graph.value(subject=nodeB, predicate=Literal('latitude')), XSD.float)
-    nodeBLon = term._castLexicalToPython(graph.value(subject=nodeB, predicate=Literal('longitude')), XSD.float)
-
-    return haversine((nodeALat, nodeALon), (nodeBLat, nodeBLon))
-
-def connected_towns(graph, node, goalnode):
-    roads = list(graph.subjects(predicate=Literal('endpoint'), object=node))
-    # for each road you want the "other" endpoint which is the destination town
-    connected = []
-    for road in roads:
-        endpoints = list(graph.objects(subject=road, predicate=Literal('endpoint')))
-        otherNode = None
-        for endpoint in endpoints:
-            if endpoint is not node:
-                otherNode = endpoint
-        roadlength = term._castLexicalToPython(graph.value(subject=road, predicate=RDF.value), XSD.integer)
-        connected.append((otherNode, haversine_distance(graph, otherNode, goalnode), roadlength))
-    return connected
+from queue import PriorityQueue
+from Map_Helpers import *
+print('testing A* search with a priority queue')
 
 g = Graph()
 
@@ -102,37 +61,30 @@ add_road(g, 196, mahikeng, rustenburg)
 
 #print(connected_towns(g, pretoria, bloemfontein))
 
-# search using the A* algorithm. As we are using a cyclic graph we need to have a closed list too
-
+# search using the A* algorithm.
 startNode = musina
 goalNode = bethlehem
 
 openNodes = PriorityQueue()
-closedNodes = []
 parents = {}    # we need to track the parents of each child node we find for the backtrack at the end
 roadsofar = {}  # for the formula f(s) = g(s) + h(s) we need to use the cost so far as well as the heuristic cost
-openNodes.push(startNode, haversine_distance(g, startNode, goalNode))
+openNodes.put((haversine_distance(g, startNode, goalNode), startNode))
 roadsofar[startNode] = 0
 parents[startNode] = None
 goal = False
-n = 0
 while goal is False:
-    if openNodes.not_empty(): 
-        n = n + 1
-        print(f'iteration {n}:')
-        print(f'open: {openNodes}')
-        print(f'closed: {closedNodes}\n')
-        activeNode, dist = openNodes.pop()
-        closedNodes.append(activeNode)
+    if not openNodes.empty(): 
+        (dist, activeNode) = openNodes.get()
         if activeNode == goalNode:
             goal = True
         else:
             children = connected_towns(g, activeNode, goalNode)
             for child in children:
-                if child[0] not in closedNodes:
+                newroadlength = roadsofar[activeNode] + child[2]    # road so far is the road so far to the parent and road length
+                if child[0] not in roadsofar or newroadlength < roadsofar[child[0]]:
                     parents[child[0]] = activeNode
-                    roadsofar[child[0]] = roadsofar[activeNode] + child[2]      # road so far is the road so far to the parent and road length
-                    openNodes.push(child[0], roadsofar[child[0]] + child[1])    # add the haversine and road so far to the priority queue
+                    roadsofar[child[0]] = newroadlength      
+                    openNodes.put((roadsofar[child[0]] + child[1], child[0])) # add the haversine and road so far to the priority queue
     else:
         break
 if goal:
@@ -143,7 +95,7 @@ if goal:
         currentNode = parents[currentNode]
         backtrackpath.append(currentNode)
     print('backtrack path:')
-    for node in backtrackpath:
+    for node in reversed(backtrackpath):
         print(node)
 else:
     print('no path could be found!')

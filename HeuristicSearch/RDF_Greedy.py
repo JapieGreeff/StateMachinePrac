@@ -7,51 +7,10 @@ from rdflib.namespace import XSD
 from rdflib.namespace import DC, FOAF
 from collections import defaultdict
 from haversine import haversine, Unit
-from PriorityQueue import PriorityQueue
+from queue import PriorityQueue
+from Map_Helpers import *
+
 print('testing Best first (Greedy) search with a priority queue')
-
-# for this example, we will use an imaginary map. We will use the Best first (greedy) algorithm to give us the shortest path from one part of the map to the other
-# Latitude and Longitude for the cities and towns in our minimal map
-
-
-# a node is a town name, lat, long
-def add_town(graph, name, lat, long):
-    node = Literal(name) # can also be a BNode
-    graph.add( (node, RDF.type, Literal('town')) )
-    graph.add( (node, Literal('latitude'), Literal(lat)) )
-    graph.add( (node, Literal('longitude'), Literal(long)) )
-    return node
-
-# a road is a distance and two nodes
-def add_road(graph, length, nodeA, nodeB):
-    road = BNode()
-    graph.add( (road, RDF.type, Literal('road')) )
-    graph.add( (road, RDF.value, Literal(length)) )
-    graph.add( (road, Literal('endpoint'), nodeA) )
-    graph.add( (road, Literal('endpoint'), nodeB) )
-
-def haversine_distance(graph, nodeA, nodeB):
-    # gets the distance as the crow flies between two nodes
-    nodeALat = term._castLexicalToPython(graph.value(subject=nodeA, predicate=Literal('latitude')), XSD.float)
-    nodeALon = term._castLexicalToPython(graph.value(subject=nodeA, predicate=Literal('longitude')), XSD.float)
-    nodeBLat = term._castLexicalToPython(graph.value(subject=nodeB, predicate=Literal('latitude')), XSD.float)
-    nodeBLon = term._castLexicalToPython(graph.value(subject=nodeB, predicate=Literal('longitude')), XSD.float)
-
-    return haversine((nodeALat, nodeALon), (nodeBLat, nodeBLon))
-
-def connected_towns(graph, node, goalnode):
-    roads = list(graph.subjects(predicate=Literal('endpoint'), object=node))
-    # for each road you want the "other" endpoint which is the destination town
-    connected = []
-    for road in roads:
-        endpoints = list(graph.objects(subject=road, predicate=Literal('endpoint')))
-        otherNode = None
-        for endpoint in endpoints:
-            if endpoint is not node:
-                otherNode = endpoint
-        roadlength = term._castLexicalToPython(graph.value(subject=road, predicate=RDF.value), XSD.integer)
-        connected.append((otherNode, haversine_distance(graph, otherNode, goalnode), roadlength))
-    return connected
 
 g = Graph()
 
@@ -60,7 +19,7 @@ musina = add_town(g, 'Musina', -22.338056, 30.041667)
 polokwane = add_town(g, 'Polokwane', -23.9, 29.45)
 modimolle = add_town(g, 'Modimolle', -24.7, 28.406111)
 mbombela = add_town(g, 'Mbombela', -25.465833, 30.985278)
-emalahleni = add_town(g, 'Emalahleni', -25.876583, 29.200972)
+emalahleni = add_town(g, 'Emalahleni', -25.876583, 29.200972) # previously Witbank
 pretoria = add_town(g, 'Pretoria', -25.746389, 28.188056)
 rustenburg = add_town(g, 'Rustenburg', -25.6544, 27.2559)
 mahikeng = add_town(g, 'Mahikeng', -25.865556, 25.643611)
@@ -72,6 +31,8 @@ standerton = add_town(g, 'Standerton', -26.95, 29.25)
 kroonstad = add_town(g, 'Kroonstad', -27.645556, 27.231667)
 bethlehem = add_town(g, 'Bethlehem', -28.233333, 28.3)
 bloemfontein = add_town(g, 'Bloemfontein', -29.1, 26.216667)
+kimberley = add_town(g,'Kimberley',-28.7282,24.7499)
+ladysmith = add_town(g,'Ladysmith',-28.5597,29.7808)
 
 # adding in all of the road nodes
 add_road(g, 201, musina, polokwane)
@@ -100,28 +61,22 @@ add_road(g, 171, klerksdorp, rustenburg)
 add_road(g, 159, vryburg, mahikeng)
 add_road(g, 196, mahikeng, rustenburg)
 
-
-#print(connected_towns(g, pretoria, bloemfontein))
-
 # search using the Best first (greedy) approach. As we are using a cyclic graph we need to have a closed list too
-
 startNode = musina
 goalNode = bethlehem
 
 openNodes = PriorityQueue()
 closedNodes = []
 parents = {}
-openNodes.push(startNode, haversine_distance(g, startNode, goalNode))
+openNodes.put((haversine_distance(g, startNode, goalNode), startNode) )
 parents[startNode] = None
 goal = False
-n = 0
 while goal is False:
-    if openNodes.not_empty(): 
-        n = n + 1
-        print(f'iteration {n}:')
-        print(f'open: {openNodes}')
-        print(f'closed: {closedNodes}\n')
-        activeNode, dist = openNodes.pop()
+    if not openNodes.empty(): 
+        #print(f'open: {openNodes.queue}, closed: {closedNodes}\n')
+        value = openNodes.get()
+        dist = value[0]
+        activeNode = value[1]
         closedNodes.append(activeNode)
         if activeNode == goalNode:
             goal = True
@@ -129,7 +84,7 @@ while goal is False:
             children = connected_towns(g, activeNode, goalNode)
             for child in children:
                 if child[0] not in closedNodes:
-                    openNodes.push(child[0], child[1])    # append the child node as well as it's haversine distance to the goal
+                    openNodes.put((child[1], child[0]))    # append the child node as well as it's haversine distance to the goal
                     parents[child[0]] = activeNode
     else:
         break
@@ -141,7 +96,22 @@ if goal:
         currentNode = parents[currentNode]
         backtrackpath.append(currentNode)
     print('backtrack path:')
-    for node in backtrackpath:
+    for node in reversed(backtrackpath):
         print(node)
 else:
     print('no path could be found!')
+
+print(f'A-K {haversine_distance(g, vryburg, standerton)}')
+print(f'B-K {haversine_distance(g, mahikeng, standerton)}')
+print(f'C-K {haversine_distance(g, klerksdorp, standerton)}')
+print(f'D-K {haversine_distance(g, rustenburg, standerton)}')
+print(f'E-K {haversine_distance(g, pretoria, standerton)}')
+print(f'F-K {haversine_distance(g, vereeniging, standerton)}')
+print(f'G-K {haversine_distance(g, kroonstad, standerton)}')
+print(f'H-K {haversine_distance(g, bloemfontein, standerton)}')
+print(f'I-K {haversine_distance(g, kimberley, standerton)}')
+print(f'J-K {haversine_distance(g, bethlehem, standerton)}')
+print(f'K-K {haversine_distance(g, standerton, standerton)}')
+print(f'L-K {haversine_distance(g, emalahleni, standerton)}')
+print(f'M-K {haversine_distance(g, mbombela, standerton)}')
+print(f'N-K {haversine_distance(g, ladysmith, standerton)}')

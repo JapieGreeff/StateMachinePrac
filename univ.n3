@@ -1,0 +1,247 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/2013_Varsity_Football> dbp:team <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/2014_Varsity_Football> dbp:team <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Absa_Puk_Oval> dbp:operator <http://dbpedia.org/resource/North-West_University> ;
+    dbp:owner <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Akker_van_der_Merwe> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Als_Puk_Tawana> dbo:owner <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Andrew_van_Wyk> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Andries_Mahoney> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Bart_le_Roux> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Bees_Roux> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Bess_Nkabinde> dbo:almaMater <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Bradley_Langenhoven> dbp:ruAmateurclubs <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/CTexT> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Caster_Semenya> dbp:almaMater <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Centre_for_Text_Technology> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Chris_Ehlers> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Cornell_du_Preez> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Danie_Dames> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Danie_Jordaan> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Dillon_Smit> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Doppies_le_Roux> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Edgar_Marutlulle> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Edwin_Hewitt_(rugby_union)> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Franco_van_der_Merwe> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Frans_Viljoen> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/George_Tossel> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Gerhard_Nortier> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Grant_le_Roux> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/HP_Swart> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Hennie_Skorbinski> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Herman_van_Schalkwyk> dbo:occupation <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/JC_Oberholzer> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Jaco_Bouwer> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Jaco_Grobler> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Jacques_van_Staden> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Joan_Swart> dbo:almaMater <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Joe_Smith_(rugby_union)> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Johan_Deysel> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Johan_Jackson> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Johannes_Maritz> dbp:education <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Joubert_Engelbrecht> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Ligtoring_Landman> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Lloyd_Greeff> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Lood_de_Jager> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Louis_van_der_Westhuizen_(rugby_union)> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Luvolwethu_Mpeta> dbo:team <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Luvolwethu_Mpeta__1> dbo:team <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/MJ_Mentz> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Marius_Fourie> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Matt_Proudfoot> dbp:ruCoachclubs <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/NWU> dbo:wikiPageDisambiguates <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/North-West_Uni.> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/North-West_University_Vaal_Triangle_Campus> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/North-west_University> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/PJ_van_Zyl> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Paul_Bosch> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Peet_van_der_Walt> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Pieter_Conradie> dbp:education <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Quinton_Crocker> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Rhyno_Smith> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Robert_Kruger> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Rocco_Jansen> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Sergio_Torrens> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Siya_Mdaka> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Spanner_Pretorius> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Stompie_de_Wet> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Strand_Kruger> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Sylvian_Mahuza> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Tewis_de_Bruyn> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/Tiaan_Dorfling> dbo:university <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/University_of_Bophuthatswana> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/University_of_North-West> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/University_of_North_West> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/University_of_the_North-West> dbo:wikiPageRedirects <http://dbpedia.org/resource/North-West_University> .
+
+<http://en.wikipedia.org/wiki/North-West_University> foaf:primaryTopic <http://dbpedia.org/resource/North-West_University> .
+
+<http://dbpedia.org/resource/North-West_University> a <http://dbpedia.org/class/yago/Abstraction100002137>,
+        <http://dbpedia.org/class/yago/BusinessSchool108281812>,
+        <http://dbpedia.org/class/yago/EducationalInstitution108276342>,
+        <http://dbpedia.org/class/yago/GraduateSchool108282696>,
+        <http://dbpedia.org/class/yago/Group100031264>,
+        <http://dbpedia.org/class/yago/Institution108053576>,
+        <http://dbpedia.org/class/yago/Organization108008335>,
+        <http://dbpedia.org/class/yago/School108276720>,
+        <http://dbpedia.org/class/yago/SocialGroup107950920>,
+        <http://dbpedia.org/class/yago/University108286569>,
+        <http://dbpedia.org/class/yago/WikicatBusinessSchoolsInSouthAfrica>,
+        <http://dbpedia.org/class/yago/WikicatEducationalInstitutionsEstablishedIn2004>,
+        <http://dbpedia.org/class/yago/WikicatPublicUniversitiesInSouthAfrica>,
+        <http://dbpedia.org/class/yago/WikicatUniversitiesInNorthWest(SouthAfricanProvince)>,
+        <http://dbpedia.org/class/yago/WikicatUniversitiesInSouthAfrica>,
+        <http://dbpedia.org/class/yago/YagoLegalActor>,
+        <http://dbpedia.org/class/yago/YagoLegalActorGeo>,
+        <http://dbpedia.org/class/yago/YagoPermanentlyLocatedEntity>,
+        dbo:Agent,
+        dbo:EducationalInstitution,
+        dbo:Organisation,
+        dbo:University,
+        <http://schema.org/CollegeOrUniversity>,
+        <http://schema.org/EducationalOrganization>,
+        <http://schema.org/Organization>,
+        <http://umbel.org/umbel/rc/EducationalOrganization>,
+        <http://umbel.org/umbel/rc/University>,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent>,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson>,
+        owl:Thing,
+        <http://www.wikidata.org/entity/Q24229398>,
+        <http://www.wikidata.org/entity/Q3918>,
+        <http://www.wikidata.org/entity/Q43229> ;
+    rdfs:label "Nordwest-Universität (Südafrika)"@de,
+        "North-West University"@en,
+        "Université du Nord-Ouest"@fr,
+        "Северо-Западный университет (ЮАР)"@ru ;
+    dbo:abstract "Die Nordwest-Universität (afrikaans: Noordwes-Universiteit; englisch: North-West University; Setswana: Yunibesiti ya Bokone-Bophirima), kurz NWU, ist eine staatliche Universität in der Republik Südafrika mit Standorten in Potchefstroom, Mmabatho<--Campus heißt aber Mahikeng--> und Vanderbijlpark. Die Nordwest-Universität entstand am 1. Januar 2004 aus einer Zusammenlegung der ehemaligen  Potchefstroom University for Christian Higher Education und der University of the North-West sowie unter Eingliederung des Sebokeng-Campus der aufgelösten Vista University. Sie wurde nach der Provinz Nordwest benannt."@de,
+        "The North-West University is a newly merged institution from 1 January 2004 onwards with three campuses at Potchefstroom, Mahikeng and Vanderbijlpark, South Africa. The Potchefstroom Campus (founded in 1869) is the largest, and the head office of the University is situated at this location. With its merged status, the North-West University became one of the largest universities in South Africa and has 64 081 students (full-time and distance education). The universities that merged to form this institution are the Potchefstroom University for Christian Higher Education and the University of North-West (formerly the University of Bophuthatswana). These two campuses form the main hubs of the university, with the Potchefstroom campus catering to Afrikaans speakers and the Mahikeng campus being broader in orientation."@en,
+        "L'université du Nord-Ouest (en anglais : North-West University) est une université publique située à Potchefstroom, Mahikeng et Vanderbijlpark en Afrique du Sud. Elle est créée en 2004 par la fusion de deux universités. Elle accueille environ 64 000 étudiants."@fr,
+        "Северо-западный университет (англ. The North-West University) — образованный 1 января 2004 года публичный университет ЮАР, состоящий из трёх кампусов в городах Почефструм, Мафикенг и Фандербейлпак. Образован в результате слияния Потчефструмского университета высшего христианского образования и Университета Северо-Запада (бывшего Университета Бопутатстваны). Потчефструмский кампус (бывший Потчефструмский университет высшего христианского образования, основан в 1869 г. как семинария, в 1905 г. включил в себя персонал расформированной бюргердорпской семинарии) — крупнейший из кампусов. Здесь расположена штаб-квартира университета. Образование в Потчефструме ведётся в основном на африкаанс, тогда как в Мафикенге — многоязычное. Третий кампус, в Фандербейлпаке — относительно небольшой. После слияния НЗУ стал одним из крупнейших университетов в ЮАР. В 2012 г. общее число студентов (очных и заочных) составило 64 081 человека. Согласно статистике en:Webometrics в январе 2012 г., НЗУ занимает 18 место среди университетов Субсахарской Африки, 23 в Африке в целом, и 1677 среди 20300 университетов мира."@ru ;
+    dbo:chancellor <http://dbpedia.org/resource/Leruo_Molotlegi> ;
+    dbo:city <http://dbpedia.org/resource/Mahikeng>,
+        <http://dbpedia.org/resource/Potchefstroom>,
+        <http://dbpedia.org/resource/Vanderbijlpark> ;
+    dbo:country <http://dbpedia.org/resource/South_Africa> ;
+    dbo:foundingDate "2004-01-01"^^xsd:date ;
+    dbo:motto "Innovation through diversity/Innovasie deur diversiteit/Poposeswa ka pharologano" ;
+    dbo:numberOfPostgraduateStudents "16769"^^xsd:nonNegativeInteger ;
+    dbo:numberOfStudents "64081"^^xsd:nonNegativeInteger ;
+    dbo:numberOfUndergraduateStudents "47144"^^xsd:nonNegativeInteger ;
+    dbo:thumbnail <http://commons.wikimedia.org/wiki/Special:FilePath/Building_Potchefstroom_University.jpg?width=300> ;
+    dbo:type <http://dbpedia.org/resource/Public_university> ;
+    dbo:viceChancellor <http://dbpedia.org/resource/Dan_Kgwadi> ;
+    dbo:wikiPageExternalLink <http://www.nwu.ac.za>,
+        <http://www.nwu.ac.za/> ;
+    dbo:wikiPageID 26762013 ;
+    dbo:wikiPageRevisionID 744082558 ;
+    dbp:sports "All types"^^rdf:langString ;
+    dbp:wordnet_type <http://www.w3.org/2006/03/wn/wn20/instances/synset-university-noun-2> ;
+    dct:subject <http://dbpedia.org/resource/Category:2004_establishments_in_South_Africa>,
+        <http://dbpedia.org/resource/Category:Business_schools_in_South_Africa>,
+        <http://dbpedia.org/resource/Category:Educational_institutions_established_in_2004>,
+        <http://dbpedia.org/resource/Category:Mahikeng>,
+        <http://dbpedia.org/resource/Category:North-West_University>,
+        <http://dbpedia.org/resource/Category:Potchefstroom>,
+        <http://dbpedia.org/resource/Category:Public_universities_in_South_Africa>,
+        <http://dbpedia.org/resource/Category:Universities_in_North_West_(South_African_province)> ;
+    rdfs:comment "Die Nordwest-Universität (afrikaans: Noordwes-Universiteit; englisch: North-West University; Setswana: Yunibesiti ya Bokone-Bophirima), kurz NWU, ist eine staatliche Universität in der Republik Südafrika mit Standorten in Potchefstroom, Mmabatho<--Campus heißt aber Mahikeng--> und Vanderbijlpark. Die Nordwest-Universität entstand am 1. Januar 2004 aus einer Zusammenlegung der ehemaligen  Potchefstroom University for Christian Higher Education und der University of the North-West sowie unter Eingliederung des Sebokeng-Campus der aufgelösten Vista University."@de,
+        "The North-West University is a newly merged institution from 1 January 2004 onwards with three campuses at Potchefstroom, Mahikeng and Vanderbijlpark, South Africa. The Potchefstroom Campus (founded in 1869) is the largest, and the head office of the University is situated at this location. With its merged status, the North-West University became one of the largest universities in South Africa and has 64 081 students (full-time and distance education)."@en,
+        "L'université du Nord-Ouest (en anglais : North-West University) est une université publique située à Potchefstroom, Mahikeng et Vanderbijlpark en Afrique du Sud. Elle est créée en 2004 par la fusion de deux universités. Elle accueille environ 64 000 étudiants."@fr,
+        "Северо-западный университет (англ. The North-West University) — образованный 1 января 2004 года публичный университет ЮАР, состоящий из трёх кампусов в городах Почефструм, Мафикенг и Фандербейлпак. Образован в результате слияния Потчефструмского университета высшего христианского образования и Университета Северо-Запада (бывшего Университета Бопутатстваны). После слияния НЗУ стал одним из крупнейших университетов в ЮАР. В 2012 г. общее число студентов (очных и заочных) составило 64 081 человека."@ru ;
+    = <http://dbpedia.org/resource/North-West_University>,
+        <http://de.dbpedia.org/resource/Nordwest-Universität_(Südafrika)>,
+        <http://fr.dbpedia.org/resource/Université_du_Nord-Ouest>,
+        <http://rdf.freebase.com/ns/m.07t7vr>,
+        <http://wikidata.dbpedia.org/resource/Q1998811>,
+        <http://www.wikidata.org/entity/Q1998811>,
+        <http://yago-knowledge.org/resource/North-West_University> ;
+    prov:wasDerivedFrom <http://en.wikipedia.org/wiki/North-West_University?oldid=744082558> ;
+    foaf:depiction <http://commons.wikimedia.org/wiki/Special:FilePath/Building_Potchefstroom_University.jpg> ;
+    foaf:homepage <http://www.nwu.ac.za/> ;
+    foaf:isPrimaryTopicOf <http://en.wikipedia.org/wiki/North-West_University> ;
+    foaf:name "Noordwes-Universiteit"@en,
+        "North-West University"@en,
+        "Yunibesiti ya Bokone-Bophirima"@en .
+
