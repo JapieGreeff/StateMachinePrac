@@ -46,7 +46,6 @@ openNodes.put(startNode)
 goal = False
 while goal is False:
     if not openNodes.empty(): 
-        print(openNodes.queue)
         activeNode = openNodes.get(block=False)
         if activeNode == goalNode:
             goal = True

@@ -42,7 +42,7 @@ closedNodes = []
 goal = False
 while goal is False:
     if not openNodes.empty(): 
-        print(openNodes.queue)
+        print(f'open[{openNodes.queue}], closed[{closedNodes}]')
         activeNode = openNodes.get(block=False)
         if activeNode == goalNode:
             goal = True

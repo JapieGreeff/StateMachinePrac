@@ -47,7 +47,6 @@ openNodes.append(startNode)
 goal = False
 while goal is False:
     if openNodes:
-        print(openNodes)
         activeNode = openNodes.pop()
         if activeNode == goalNode:
             goal = True

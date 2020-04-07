@@ -1,7 +1,7 @@
 from queue import Queue
 import networkx as nx
 
-g = nx.Graph()
+g = nx.DiGraph()
 g.add_node('A')
 g.add_node('B')
 g.add_node('C')
@@ -30,28 +30,21 @@ g.add_edge('G','K')
 g.add_edge('G','L')
 g.add_edge('G','M')
 
-print('testing DFS from A to I with a stack')
+print('testing DFS from A to I with a Stack')
 startNode = 'A'
 goalNode = 'I'
-parents = {}
-parents[startNode] = None
 openNodes = []
 openNodes.append(startNode)
-closedNodes = []
 goal = False
 while goal is False:
     if openNodes: 
         activeNode = openNodes.pop()
-        print(f'current = {activeNode}, open[{openNodes}], closed[{closedNodes}]')
         if activeNode == goalNode:
             goal = True
         else:
             children = g.neighbors(activeNode)
-            closedNodes.append(activeNode)
-            for child in children:
-                if child not in closedNodes:
-                    parents[child] = activeNode
-                    openNodes.append(child)
+            for child in children:                
+                openNodes.append(child)
     else:
         break
 if goal:
@@ -59,7 +52,7 @@ if goal:
     currentNode = goalNode
     backtrackpath.append(currentNode)
     while currentNode is not startNode:
-        currentNode = parents[currentNode]
+        currentNode = list(g.predecessors(currentNode))[0]
         backtrackpath.append(currentNode)
     print('backtrack path:')
     for node in reversed(backtrackpath):
